@@ -1,0 +1,47 @@
+[
+    {
+        "title": "Sample Video 1",
+        "video_url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        "thumbnail_url": "https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg"
+    },
+    {
+        "title": "Sample Video 2",
+        "video_url": "https://www.youtube.com/embed/3JZ_D3ELwOQ",
+        "thumbnail_url": "https://img.youtube.com/vi/3JZ_D3ELwOQ/0.jpg"
+    },
+    {
+        "title": "Sample Video 3",
+        "video_url": "https://www.youtube.com/embed/tgbNymZ7vqY",
+        "thumbnail_url": "https://img.youtube.com/vi/tgbNymZ7vqY/0.jpg"
+    },
+    {
+        "title": "Sample Video 4",
+        "video_url": "https://www.youtube.com/embed/abc123",
+        "thumbnail_url": "https://img.youtube.com/vi/abc123/0.jpg"
+    },
+    {
+        "title": "Sample Video 5",
+        "video_url": "https://www.youtube.com/embed/xyz456",
+        "thumbnail_url": "https://img.youtube.com/vi/xyz456/0.jpg"
+    },
+    {
+        "title": "Sample Video 6",
+        "video_url": "https://www.youtube.com/embed/lmno789",
+        "thumbnail_url": "https://img.youtube.com/vi/lmno789/0.jpg"
+    },
+    {
+        "title": "Sample Video 7",
+        "video_url": "https://www.youtube.com/embed/pqr012",
+        "thumbnail_url": "https://img.youtube.com/vi/pqr012/0.jpg"
+    },
+    {
+        "title": "Sample Video 8",
+        "video_url": "https://www.youtube.com/embed/stu345",
+        "thumbnail_url": "https://img.youtube.com/vi/stu345/0.jpg"
+    },
+    {
+        "title": "Sample Video 9",
+        "video_url": "https://www.youtube.com/embed/vwx678",
+        "thumbnail_url": "https://img.youtube.com/vi/vwx678/0.jpg"
+    }
+]
