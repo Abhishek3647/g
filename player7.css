@@ -1,0 +1,20 @@
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  margin-bottom: 20px;
+  background-image: url('your-image-url.jpg'); /* Set an image as background */
+  background-size: cover;
+  background-position: center;
+}
+
+.video-container:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Optional: Semi-transparent overlay */
+}
