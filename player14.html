@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Material Cards</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/daisyui@1.7.0/dist/full.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <style>
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      margin-bottom: 20px;
+    }
+
+    .card-container {
+      margin-top: 50px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+
+    .thumbnail-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <!-- Header -->
+  <header class="bg-blue-600 text-white py-8 text-center">
+    <h1 id="greeting" class="text-4xl font-bold"></h1>
+    <p class="text-xl mt-2">Thank you for visiting</p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-8">
+
+    <!-- Video Player Section inside Card 1 -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 card-container">
+
+      <!-- Card 1: GK and GS by Khan Sir -->
+      <div class="card cursor-pointer" id="card1" onclick="loadVideo(0)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Khan_Sir.jpg" 
+             alt="Khan Sir" 
+             class="w-full h-48 object-cover rounded-t-lg thumbnail-img">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg text-gray-800">GK and GS by Khan Sir</h3>
+          <p class="text-gray-600 text-sm">A complete guide for General Knowledge and General Studies by Khan Sir.</p>
+          <p class="text-gray-500 text-xs">Click to play the first video of the playlist.</p>
+        </div>
+
+        <!-- Video Container for Card 1 (This will hold the iframe player) -->
+        <div id="videoContainer1" class="video-container"></div>
+
+      </div>
+
+      <!-- Other Cards (2 to 8) -->
+      <div class="card bg-white shadow-lg rounded-lg overflow-hidden">
+        <div class="p-4" onclick="loadVideo(1)">
+          <h3 class="font-semibold text-lg text-gray-800">English by Neetu Mam</h3>
+          <p class="text-gray-600 text-sm">Learn English in a fun and easy way with Neetu Mam.</p>
+        </div>
+      </div>
+
+      <div class="card bg-white shadow-lg rounded-lg overflow-hidden">
+        <div class="p-4" onclick="loadVideo(2)">
+          <h3 class="font-semibold text-lg text-gray-800">Polity by Khan Sir</h3>
+          <p class="text-gray-600 text-sm">Comprehensive lessons on Indian Polity by Khan Sir.</p>
+        </div>
+      </div>
+
+      <!-- Blank Cards (4 to 8) -->
+      <div class="card bg-white shadow-lg rounded-lg overflow-hidden">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg text-gray-800">Card 4</h3>
+          <p class="text-gray-600 text-sm">Content coming soon!</p>
+        </div>
+      </div>
+
+      <div class="card bg-white shadow-lg rounded-lg overflow-hidden">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg text-gray-800">Card 5</h3>
+          <p class="text-gray-600 text-sm">Content coming soon!</p>
+        </div>
+      </div>
+
+      <div class="card bg-white shadow-lg rounded-lg overflow-hidden">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg text-gray-800">Card 6</h3>
+          <p class="text-gray-600 text-sm">Content coming soon!</p>
+        </div>
+      </div>
+
+      <div class="card bg-white shadow-lg rounded-lg overflow-hidden">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg text-gray-800">Card 7</h3>
+          <p class="text-gray-600 text-sm">Content coming soon!</p>
+        </div>
+      </div>
+
+      <div class="card bg-white shadow-lg rounded-lg overflow-hidden">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg text-gray-800">Card 8</h3>
+          <p class="text-gray-600 text-sm">Content coming soon!</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6 text-center">
+    <p>&copy; 2025 Your Website. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    let player;
+    const playlist = [
+      "BSJa1UytM8w", // Video ID for Video 1
+      "4jRmwPjoA1s", // Video ID for Video 2
+      "wB5ZQZm9F7g"  // Video ID for Video 3
+    ];
+
+    // Function to load the video into the iframe
+    function loadVideo(index) {
+      var videoContainer1 = document.getElementById('videoContainer1');
+      
+      // If the iframe is not yet loaded, embed the YouTube player inside Card 1
+      if (videoContainer1.innerHTML === '') {
+        var iframe = document.createElement('iframe');
+        iframe.id = 'player';
+        iframe.src = `https://www.youtube.com/embed/${playlist[index]}?autoplay=1`;  // Load specific video from the playlist
+        iframe.frameborder = "0";
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+        iframe.allowfullscreen = true;
+        
+        // Append the iframe to the videoContainer div inside Card 1
+        videoContainer1.appendChild(iframe);
+      } else {
+        // If iframe is already loaded, just change the video
+        player.loadVideoById(playlist[index]);
+        player.playVideo();
+      }
+    }
+
+    // YouTube API function to initialize player
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+
+    function onPlayerReady(event) {
+      // Optionally autoplay video when player is ready
+     
