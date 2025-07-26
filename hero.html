@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Material Cards</title>
+  <!-- Tailwind CSS (including DaisyUI) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/daisyui@1.7.0/dist/full.js"></script>
+  <style>
+    .iframe-container {
+      width: 100%;
+      height: 315px;
+      border: none;
+    }
+    .card-container {
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <!-- Header: Greeting -->
+  <header class="bg-blue-600 text-white py-8 text-center">
+    <h1 id="greeting" class="text-4xl font-bold"></h1>
+    <p class="text-xl mt-2">Thank you for visiting</p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-8">
+    <!-- Cards Section -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 card-container">
+
+      <!-- Card 1: GK and GS by Khan Sir -->
+      <div class="card bg-white shadow-lg rounded-lg overflow-hidden hover:scale-105 transition cursor-pointer" 
+           id="card1" 
+           onclick="window.location.href='https://youtube.com/playlist?list=PL9xgyIX5VoqGB34Ly3v9K0IIv_sgowJWw&si=UH3bObB0VuWkyeko'">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Khan_Sir.jpg" 
+             alt="Khan Sir" 
+             class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg text-gray-800">GK and GS by Khan Sir</h3>
+          <p class="text-gray-600 text-sm">A complete guide for General Knowledge and General Studies by Khan Sir.</p>
+        </div>
+      </div>
+
+      <!-- Card 2: English by Neetu Mam -->
+      <div class="card bg-white shadow-lg rounded-lg overflow-hidden">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg text-gray-800">English by Neetu Mam</h3>
+          <p class="text-gray-600 text-sm">Learn English in a fun and easy way with Neetu Mam.</p>
+        </div>
+      </div>
+
+      <!-- Card 3: Polity by Khan Sir -->
+      <div class="card bg-white shadow-lg rounded-lg overflow-hidden hover:scale-105 transition cursor-pointer" 
+           id="card3" 
+           onclick="window.location.href='https://youtube.com/playlist?list=PL9xgyIX5VoqGB34Ly3v9K0IIv_sgowJWw&si=UH3bObB0VuWkyeko'">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Khan_Sir.jpg" 
+             alt="Khan Sir" 
+             class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg text-gray-800">Polity by Khan Sir</h3>
+          <p class="text-gray-600 text-sm">Comprehensive lessons on Indian Polity by Khan Sir.</p>
+        </div>
+      </div>
+
+      <!-- Blank Cards (4 to 8) -->
+      <div class="card bg-white shadow-lg rounded-lg overflow-hidden">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg text-gray-800">Card 4</h3>
+          <p class="text-gray-600 text-sm">Content coming soon!</p>
+        </div>
+      </div>
+
+      <div class="card bg-white shadow-lg rounded-lg overflow-hidden">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg text-gray-800">Card 5</h3>
+          <p class="text-gray-600 text-sm">Content coming soon!</p>
+        </div>
+      </div>
+
+      <div class="card bg-white shadow-lg rounded-lg overflow-hidden">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg text-gray-800">Card 6</h3>
+          <p class="text-gray-600 text-sm">Content coming soon!</p>
+        </div>
+      </div>
+
+      <div class="card bg-white shadow-lg rounded-lg overflow-hidden">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg text-gray-800">Card 7</h3>
+          <p class="text-gray-600 text-sm">Content coming soon!</p>
+        </div>
+      </div>
+
+      <div class="card bg-white shadow-lg rounded-lg overflow-hidden">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg text-gray-800">Card 8</h3>
+          <p class="text-gray-600 text-sm">Content coming soon!</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Video Player Section (Currently empty) -->
+    <div class="mt-8">
+      <iframe id="videoPlayer" class="iframe-container" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6 text-center">
+    <p>&copy; 2025 Your Website. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // JavaScript to display the correct greeting based on the time of day
+    function displayGreeting() {
+      const hours = new Date().getHours();
+      const greetingElement = document.getElementById("greeting");
+
+      if (hours < 12) {
+        greetingElement.innerHTML = "Good Morning";
+      } else if (hours < 18) {
+        greetingElement.innerHTML = "Good Afternoon";
+      } else {
+        greetingElement.innerHTML = "Good Evening";
+      }
+    }
+
+    // Call the function when the page loads
+    window.onload = function() {
+      displayGreeting();
+    };
+  </script>
+
+</body>
+</html>
