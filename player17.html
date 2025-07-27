@@ -1,0 +1,55 @@
+<!-- videos.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Video Playlist</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <header class="bg-blue-600 text-white py-6 text-center">
+    <h1 class="text-3xl font-bold">Video Playlist</h1>
+  </header>
+
+  <main class="container mx-auto px-4 py-8">
+    <div id="video-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
+    <div id="player" class="mt-10"></div>
+  </main>
+
+  <script>
+    // Load videos from JSON and render cards
+    fetch('videos.json')
+      .then(response => response.json())
+      .then(videos => {
+        const container = document.getElementById('video-container');
+
+        videos.forEach(video => {
+          const card = document.createElement('div');
+          card.className = "card bg-white shadow-lg rounded-lg overflow-hidden hover:scale-105 transition cursor-pointer";
+          card.innerHTML = `
+            <img src="${video.thumbnail_url}" alt="${video.title}" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="font-semibold text-lg text-gray-800">${video.title}</h3>
+            </div>
+          `;
+
+          card.onclick = () => {
+            document.getElementById('player').innerHTML = `
+              <iframe class="w-full h-96" src="${video.video_url}?autoplay=1" frameborder="0" allowfullscreen></iframe>
+            `;
+            window.scrollTo({ top: document.getElementById('player').offsetTop, behavior: 'smooth' });
+          };
+
+          container.appendChild(card);
+        });
+      })
+      .catch(error => {
+        console.error('Error loading videos:', error);
+        document.getElementById('video-container').innerHTML = `<p class="text-red-500">Failed to load videos.</p>`;
+      });
+  </script>
+
+</body>
+</html>
